@@ -28,6 +28,7 @@ CI, and package build checks for both pip and uv workflows.
    - Ruff `known-first-party`
    - mypy `files`
    - `tests/test_package.py`
+   - `AGENTS.md`
    - this README
 
    Most of these are in [`pyproject.toml`](pyproject.toml).
