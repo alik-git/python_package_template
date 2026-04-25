@@ -58,12 +58,6 @@ CI, and package build checks for both pip and uv workflows.
    Then replace the copyright placeholder and add the matching `license` value
    in `pyproject.toml`, either `MIT` or `Apache-2.0`.
 
-   After choosing a license, the templates can be removed:
-
-   ```bash
-   rm -r templates/licenses
-   ```
-
 6. Add your code under `src/your_package_name/` and, if needed, expose a public
    API from `src/your_package_name/__init__.py`.
 
@@ -79,7 +73,7 @@ uv sync --extra dev
 
 This repository commits `.python-version` and `uv.lock` so the uv workflow uses
 Python 3.11 by default and resolves reproducible dependency versions. After
-changing dependencies, update the lockfile with:
+changing package metadata or dependencies, update the lockfile with:
 
 ```bash
 uv lock
