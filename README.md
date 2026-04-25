@@ -6,7 +6,7 @@ This template includes a standard `src/` package layout, Ruff formatting and
 linting, mypy type checking, pytest, pre-commit hygiene checks, GitHub Actions
 CI, and package build checks for both pip and uv workflows.
 
-## Getting Started
+## Template Setup
 
 1. Pick a package name.
 
@@ -66,7 +66,9 @@ CI, and package build checks for both pip and uv workflows.
 6. Add your code under `src/your_package_name/` and, if needed, expose a public
    API from `src/your_package_name/__init__.py`.
 
-## Install For Development
+7. Update this README as needed for the package you are building.
+
+## Installation
 
 Recommended with `uv`:
 
@@ -96,9 +98,25 @@ conda activate mypackage
 python -m pip install -e ".[dev]"
 ```
 
-## Run Checks
+## Getting Started
 
-With `uv`:
+Run the starter Python API:
+
+```python
+import mypackage
+
+result = mypackage.do_useful_thing("world")
+```
+
+Run the starter CLI:
+
+```bash
+mypackage
+```
+
+## Development Workflow
+
+Run the standard checks before opening a PR:
 
 ```bash
 uv run ruff format --check .
@@ -109,7 +127,7 @@ uv run pre-commit run --all-files
 uv build
 ```
 
-With standard Python tools:
+If you are using standard Python tools instead of uv:
 
 ```bash
 python -m ruff format --check .
@@ -120,23 +138,13 @@ python -m pre_commit run --all-files
 python -m build
 ```
 
-## Use The Package
-
-Python API:
-
-```python
-import mypackage
-
-result = mypackage.do_useful_thing("world")
-```
-
-CLI:
+Pre-commit hooks are optional. To enable local checks before each commit:
 
 ```bash
-mypackage
+uv run pre-commit install
 ```
 
-## Layout
+## Project Layout
 
 ```text
 src/mypackage/
@@ -149,7 +157,7 @@ tests/
   test_package.py
 ```
 
-## CI
+## CI / GitHub Actions
 
 GitHub Actions runs:
 
@@ -160,3 +168,14 @@ GitHub Actions runs:
 
 Local pre-commit hooks are not installed automatically. Running
 `pre-commit install` is optional.
+
+## Documentation
+
+Project documentation lives in [`docs/`](docs/):
+
+- [`docs/api.md`](docs/api.md): public API notes and examples
+
+## Troubleshooting
+
+Add project-specific troubleshooting notes here when setup or runtime issues
+come up repeatedly.
