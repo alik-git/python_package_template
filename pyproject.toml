@@ -7,7 +7,9 @@ name = "python-package-template"
 version = "0.1.0"
 description = "Minimal Python package template."
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+  "colorlog>=6.10",
+]
 
 [project.optional-dependencies]
 dev = [
