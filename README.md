@@ -1,44 +1,44 @@
 # Python Package Template
 
-A minimal, modern Python package template for quickly starting an importable
-package with a small CLI, logging, tests, type checking, packaging checks, and
-GitHub Actions.
+A minimal template for building a modern Python package.
 
-This repository is intentionally generic. Rename `mypackage`, update
-`pyproject.toml`, choose a license only if the project should be published or
-open sourced, and then start replacing the starter function with real code.
+This template includes a standard `src/` package layout, Ruff formatting and
+linting, mypy type checking, pytest, pre-commit hygiene checks, GitHub Actions
+CI, and package build checks for both pip and uv workflows.
 
-## Start A New Package
+## Getting Started
 
-1. Rename the import package:
+1. Pick a package name.
+
+   Use a short lowercase import name like `numpy` or `pandas`. The import
+   package name is usually underscore-separated, while the PyPI/project name may
+   use hyphens.
+
+2. Rename the package folder:
 
    ```bash
    mv src/mypackage src/your_package_name
    ```
 
-2. Update the package metadata and tool settings in
-   [`pyproject.toml`](pyproject.toml):
+3. Replace `mypackage` with your package name in:
 
    - `name`
+   - `[project.urls]`
+   - `[project.scripts]`
+   - Ruff `known-first-party`
+   - mypy `files`
+   - `tests/test_package.py`
+   - this README
+
+   Most of these are in [`pyproject.toml`](pyproject.toml).
+
+4. Fill in basic package metadata in [`pyproject.toml`](pyproject.toml):
+
    - `description`
    - `authors`
    - `maintainers`
    - `keywords`
    - `classifiers`
-   - `[project.urls]`
-   - `[project.scripts]`
-   - Ruff `known-first-party`
-   - mypy `files`
-   - references to `mypackage` throughout this README
-
-3. Update imports in:
-
-   - `src/your_package_name/__init__.py`
-   - `src/your_package_name/cli.py`
-   - `tests/test_package.py`
-
-4. Add package code under `src/your_package_name/` and expose the intended
-   public API from `src/your_package_name/__init__.py`.
 
 5. Add a license if the package will be public or open source. The files under
    [`templates/licenses`](templates/licenses) are templates only and do not
@@ -56,6 +56,15 @@ open sourced, and then start replacing the starter function with real code.
 
    Then replace the copyright placeholder and add the matching `license` value
    in `pyproject.toml`, either `MIT` or `Apache-2.0`.
+
+   After choosing a license, the templates can be removed:
+
+   ```bash
+   rm -r templates/licenses
+   ```
+
+6. Add your code under `src/your_package_name/` and, if needed, expose a public
+   API from `src/your_package_name/__init__.py`.
 
 ## Install For Development
 
