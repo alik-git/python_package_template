@@ -118,12 +118,13 @@ jobs:
         uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
+          cache-dependency-glob: uv.lock
 
       - name: Set up Python
         run: uv python install 3.11
 
       - name: Install Python dependencies
-        run: uv sync --extra dev
+        run: uv sync --extra dev --locked
 
       - name: Build package
         run: uv build

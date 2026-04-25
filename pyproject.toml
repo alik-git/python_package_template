@@ -6,7 +6,24 @@ build-backend = "hatchling.build"
 name = "mypackage"
 version = "0.1.0"
 description = "Minimal Python package template."
+readme = "README.md"
 requires-python = ">=3.11"
+authors = [
+  { name = "Your Name", email = "you@example.com" },
+]
+maintainers = [
+  { name = "Your Name", email = "you@example.com" },
+]
+keywords = ["python", "template", "package"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Typing :: Typed",
+]
 dependencies = [
   "colorlog>=6.10",
 ]
@@ -25,6 +42,11 @@ packages = ["src/mypackage"]
 
 [project.scripts]
 mypackage = "mypackage.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/alik-git/python_package_template"
+Repository = "https://github.com/alik-git/python_package_template"
+Issues = "https://github.com/alik-git/python_package_template/issues"
 
 [tool.ruff]
 line-length = 88
