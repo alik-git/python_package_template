@@ -40,7 +40,9 @@ open sourced, and then start replacing the starter function with real code.
 4. Add package code under `src/your_package_name/` and expose the intended
    public API from `src/your_package_name/__init__.py`.
 
-5. Add a license if the package will be public or open source:
+5. Add a license if the package will be public or open source. The files under
+   [`templates/licenses`](templates/licenses) are templates only and do not
+   license this repository.
 
    ```bash
    cp templates/licenses/MIT LICENSE
@@ -52,8 +54,8 @@ open sourced, and then start replacing the starter function with real code.
    cp templates/licenses/Apache-2.0 LICENSE
    ```
 
-   Then add the matching `license` value in `pyproject.toml`, either `MIT` or
-   `Apache-2.0`.
+   Then replace the copyright placeholder and add the matching `license` value
+   in `pyproject.toml`, either `MIT` or `Apache-2.0`.
 
 ## Install For Development
 
