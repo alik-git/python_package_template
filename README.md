@@ -171,6 +171,8 @@ Local pre-commit hooks are not installed automatically. Running
 Project documentation lives in [`docs/`](docs/):
 
 - [`docs/api.md`](docs/api.md): public API notes and examples
+- [`docs/ci-private-submodules.md`](docs/ci-private-submodules.md): GitHub
+  Actions setup for private submodules
 
 ## Troubleshooting
 
