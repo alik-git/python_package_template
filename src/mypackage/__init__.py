@@ -1,3 +1,5 @@
+"""Example package used by the Python package template."""
+
 from __future__ import annotations
 
 import logging

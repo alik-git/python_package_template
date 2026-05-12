@@ -1,3 +1,5 @@
+"""Tests for package import and metadata behavior."""
+
 from __future__ import annotations
 
 import mypackage

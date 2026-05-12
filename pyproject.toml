@@ -86,6 +86,8 @@ extend-select = [
   "ANN201",  # public function return annotations
   "ANN202",  # private function return annotations
   "ANN204",  # special-method return annotations
+  "D100",    # module docstrings
+  "D104",    # package docstrings
   "D102",    # public method docstrings
   "D103",    # public function docstrings
   "D2",      # docstring whitespace/placement conventions

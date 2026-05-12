@@ -1,3 +1,5 @@
+"""Example package functionality for the template project."""
+
 from __future__ import annotations
 
 import logging
