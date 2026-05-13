@@ -65,6 +65,9 @@ CI, and package build checks for both pip and uv workflows.
 
 7. Update this README as needed for the package you are building.
 
+8. If you plan to publish to PyPI, update the release workflow and trusted
+   publisher settings as described in [Publishing](#publishing).
+
 ## Installation
 
 Recommended with `uv`:
@@ -163,8 +166,41 @@ GitHub Actions runs:
 - package build and wheel smoke test with pip
 - package build and wheel smoke test with uv
 
+The release workflow in [`.github/workflows/release.yml`](.github/workflows/release.yml)
+builds and publishes the package to PyPI when a GitHub Release is published.
+
 Local pre-commit hooks are not installed automatically. Running
 `pre-commit install` is optional.
+
+## Publishing
+
+This template is not meant to be published to PyPI as-is. After copying the
+template for a real package, rename the project in [`pyproject.toml`](pyproject.toml)
+and use PyPI Trusted Publishing for releases.
+
+1. Create or log in to your PyPI account.
+2. Go to <https://pypi.org/manage/account/publishing/>.
+3. Add a pending trusted publisher with:
+
+   ```text
+   PyPI project name: <project name from pyproject.toml>
+   Owner: <GitHub owner or organization>
+   Repository name: <GitHub repository name>
+   Workflow name: release.yml
+   Environment name: pypi
+   ```
+
+4. Commit and push the package metadata and release workflow.
+5. Create a GitHub Release for the version in [`pyproject.toml`](pyproject.toml):
+
+   ```bash
+   gh release create v0.1.0 \
+     --title "v0.1.0" \
+     --notes "Initial release."
+   ```
+
+Publishing is release-driven on purpose: normal pushes and pull requests build
+and test the package, but only GitHub Releases publish to PyPI.
 
 ## Documentation
 
