@@ -3,7 +3,7 @@
 A minimal template for building a modern Python package.
 
 This template includes a standard `src/` package layout, Ruff formatting and
-linting, mypy type checking, pytest, pre-commit hygiene checks, GitHub Actions
+linting, mypy type checking, pytest, optional pre-commit hooks, GitHub Actions
 CI, and package build checks for both pip and uv workflows.
 
 ## Template Setup
@@ -123,7 +123,6 @@ uv run ruff format --check .
 uv run ruff check .
 uv run mypy
 uv run pytest
-uv run pre-commit run --all-files
 uv build
 ```
 
@@ -134,11 +133,17 @@ python -m ruff format --check .
 python -m ruff check .
 python -m mypy
 python -m pytest
-python -m pre_commit run --all-files
 python -m build
 ```
 
-Pre-commit hooks are optional. To enable local checks before each commit:
+Pre-commit is included in the development dependencies but is optional. To run
+the hooks manually:
+
+```bash
+python -m pre_commit run --all-files
+```
+
+To enable local checks before each commit:
 
 ```bash
 uv run pre-commit install
@@ -162,7 +167,7 @@ tests/
 GitHub Actions runs:
 
 - fast Ruff-only checks
-- Ruff, mypy, pre-commit hygiene, and pytest
+- Ruff, mypy, and pytest
 - package build and wheel smoke test with pip
 - package build and wheel smoke test with uv
 
