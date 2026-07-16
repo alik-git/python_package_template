@@ -40,7 +40,7 @@ jobs:
         run: python -m ruff check --output-format=full .
 
   python-checks:
-    name: Ruff + Mypy + Pytest
+    name: Ruff + ty + Pytest
     runs-on: ubuntu-latest
     timeout-minutes: 10
     strategy:
@@ -70,8 +70,8 @@ jobs:
       - name: Ruff lint
         run: python -m ruff check --output-format=full .
 
-      - name: Mypy static type checks
-        run: python -m mypy
+      - name: ty static type checks
+        run: ty check
 
       - name: Pytest tests
         run: python -m pytest
