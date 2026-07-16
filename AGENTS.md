@@ -11,7 +11,7 @@ Repo-specific instructions for agents working with the `mypackage` package.
 
 - Run checks relevant to the files changed.
 - For README/docs-only changes, run formatting and pre-commit hygiene.
-- For Python or packaging changes, also run Ruff, mypy, pytest, and build
+- For Python or packaging changes, also run Ruff, ty, pytest, and build
   checks.
 
 ## Pull Requests
