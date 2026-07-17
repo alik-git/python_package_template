@@ -4,7 +4,7 @@ A minimal template for building a modern Python package.
 
 This template includes a standard `src/` package layout, Ruff formatting and
 linting, ty type checking, pytest, optional pre-commit hooks, GitHub Actions
-CI, and package build checks for both pip and uv workflows.
+CI, and uv-based package build validation.
 
 ## Template Setup
 
@@ -167,9 +167,8 @@ tests/
 GitHub Actions runs:
 
 - fast Ruff-only checks
-- Ruff, ty, and pytest
-- package build and wheel smoke test with pip
-- package build and wheel smoke test with uv
+- ty and pytest across the supported Python versions
+- an uv package build and clean-environment wheel smoke test
 
 The release workflow in [`.github/workflows/release.yml`](.github/workflows/release.yml)
 builds and publishes the package to PyPI when a GitHub Release is published.
