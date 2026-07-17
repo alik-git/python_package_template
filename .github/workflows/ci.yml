@@ -22,10 +22,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
-        with:
-          sparse-checkout: |
-            src
-            tests
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -55,10 +51,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
-        with:
-          sparse-checkout: |
-            src
-            tests
 
       - name: Set up Python
         uses: actions/setup-python@v6
